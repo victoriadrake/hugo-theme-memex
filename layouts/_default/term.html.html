@@ -1,0 +1,18 @@
+{{ define "content" }}
+<!-- tags or categories list page -->
+{{ partial "outputformats" . }}
+<ul id="feed__ul" class="h-feed">
+    {{ $pages := .Pages }}
+    {{ $paginator := .Paginate $pages }}
+    {{ range $paginator.Pages }}
+    {{ partial "li" . }}
+    {{ end }}
+</ul>
+<p>total {{ .Pages | lower }}</p>
+{{ end }}
+
+{{ define "footer" }}
+<footer>
+    {{ partial "pagination" . }}
+</footer>
+{{ end }}

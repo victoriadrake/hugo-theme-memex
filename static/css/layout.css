@@ -1,0 +1,182 @@
+@import "vars.css";
+@import "feed.css";
+@import "md.css";
+@import "wm.css";
+@import "h-card.css";
+html {
+    box-sizing: border-box;
+    background-color: var(--color-bg);
+    min-height: 100vh;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-primary);
+    font-family: monospace;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    min-height: 100vh;
+    word-wrap: break-word;
+}
+
+a {
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--accent);
+}
+
+img {
+    max-width: 100%;
+}
+
+hr {
+    display: none;
+}
+
+h1 { font-family: monospace; font-size: 23px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 23px; }
+h3 { font-family: monospace; font-size: 17px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 23px; }
+p { font-family: monospace; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 23px; margin: 0;}
+blockquote { font-family: monospace; font-size: 17px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 23px; }
+pre { font-family: monospace; font-size: 11px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 23px; }
+
+/* Header and Navigation */
+
+.header {
+    min-width: var(--content-width);
+    justify-content: space-between !important;
+    border-bottom: 1px solid var(--color-shadow);
+    margin-bottom: var(--content-margin);
+}
+
+@media (max-width: 414px) {
+    .header {
+        flex-direction: column !important;
+        padding-top: 1rem;
+    }
+    ul.flex.row {
+        padding-left: 0;
+    }
+}
+
+#logo {
+    padding: 0 1rem;
+}
+
+#logo > a > .u-logo {
+    max-width: calc(20px * var(--scale)) !important;
+}
+
+#site__name {
+    font-size: calc(20px * var(--scale));
+    font-weight: 800;
+    padding: 0;
+}
+
+#site__name img {
+    max-height: 2rem;
+}
+
+nav,
+footer {
+    min-height: 4rem;
+    background-color: transparent;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    align-items: center !important;
+}
+
+nav ul {
+    margin: 0;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    list-style-type: none;
+    margin: 0 2rem;
+}
+
+.altoutputs {
+    width: var(--content-width);
+    text-align: right;
+}
+
+/* Fundamental Layout */
+
+main {
+    margin: 0 auto;
+    padding: 0 var(--item-margin);
+    background-color: var(--color-bg);
+    max-width: var(--content-width);
+}
+
+section {
+    width: var(--content-width);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+}
+
+article {
+    padding: 1rem var(--content-padding);
+}
+
+div.content {
+    width: var(--content-width);
+    word-wrap: break-word;
+    background-color: var(--item-bg);
+}
+
+footer {
+    width: 100%;
+    margin: 3rem auto;
+}
+
+footer>section>p {
+    margin: 0 auto !important;
+}
+
+.hidden {
+    display: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.col {
+    flex-direction: column;
+}
+
+/* Pagination Styles */
+
+.pagination {
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.pag__item {
+    list-style-type: none;
+    text-align: center;
+}
+
+.pag__link {
+    background: none;
+}
+
+/* Misc Fixes */
+
+article.md.p-summary.e-content > h2.p-name {
+    padding-top: 0;
+}

@@ -1,0 +1,7 @@
+exclude = ["archetypes", "exampleSite", "layouts", "theme.toml"]
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = ""
+    max = ""

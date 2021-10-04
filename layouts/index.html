@@ -1,0 +1,26 @@
+{{ define "content" }}
+{{ partial "outputformats" . }}
+<div class="content">
+  <time class="hidden dt-published">{{ .Date }}</time>
+      <article class="md p-summary e-content">
+        <h2 class="hidden p-name">
+          {{ .Title }}
+        </h2>
+        {{ if .Params.uri }}
+        <a href="{{ .Params.uri }}" target="_blank">{{ .Params.uri }}</a>
+        {{ end }}
+        {{ .Content }}
+        <!-- Bridgy -->
+        <a class="hidden" href="https://brid.gy/publish/mastodon"></a>
+        <a class="hidden" href="https://brid.gy/publish/twitter"></a>
+        <a class="hidden" href="https://fed.brid.gy/"></a>
+        <data class="p-bridgy-omit-link" value="false"></data>
+      </article>
+</div>
+{{ end }}
+
+{{ define "footer" }}
+<footer>
+  {{ partial "pagination" . }}
+</footer>
+{{ end }}

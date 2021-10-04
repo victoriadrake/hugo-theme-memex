@@ -1,0 +1,19 @@
+{{ define "content" }}
+<!-- any list of entries page -->
+<div class="content">
+  {{ .Content }}
+</div>
+{{ partial "outputformats" . }}
+<ul id="feed__ul" class="h-feed">
+  {{ range .Pages }}
+  {{ partial "li" . }}
+  {{ end }}
+</ul>
+<p>total {{ .Pages | lower }}</p>
+{{ end }}
+
+{{ define "footer" }}
+<footer>
+  {{ partial "pagination" . }}
+</footer>
+{{ end }}

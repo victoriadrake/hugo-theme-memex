@@ -1,0 +1,46 @@
+{{ define "main" }}
+<!-- content page -->
+<main aria-role="main">
+  {{- partial "header" . -}}
+  <section>
+    <div class="content">
+      <time class="hidden dt-published">{{ .Date }}</time>
+      <article class="md p-summary e-content">
+        <h2 class="p-name">
+          {{ .Title }}
+        </h2>
+        {{ if .Params.uri }}
+        <a href="{{ .Params.uri }}" target="_blank">{{ .Params.uri }}</a>
+        {{ end }}
+        {{ .Content }}
+        <div class="properties__row">
+          {{ range (.GetTerms "tags") }}
+          <a class="p-category properties" id="tag" href="{{ .Permalink }}">#{{.LinkTitle}}</a>
+          {{ end }}
+        </div>
+
+        <!-- Bridgy -->
+        <a class="hidden" href="https://brid.gy/publish/mastodon"></a>
+        <a class="hidden" href="https://brid.gy/publish/twitter"></a>
+        <a class="hidden" href="https://fed.brid.gy/"></a>
+        <data class="p-bridgy-omit-link" value="false"></data>
+      </article>
+    </div>
+    {{ partial "webmentions" . }}
+    <!-- show Webmentions -->
+    <div id="webmentions"></div>
+  </section>
+
+  <section>
+    {{ $related := .Site.RegularPages.Related . | first 5 }}
+    {{ with $related }}
+    <h3>Related Pages</h3>
+    <ul>
+      {{ range . }}
+      {{ partial "li" . }}
+      {{ end }}
+    </ul>
+    {{ end }}
+  </section>
+</main>
+{{ end }}

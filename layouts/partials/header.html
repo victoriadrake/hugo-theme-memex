@@ -1,0 +1,32 @@
+<!-- site header bar -->
+<header>
+    <section>
+        <div class="header flex row">
+            <div class="header__item flex row">
+                {{ if .Site.Params.logo }}
+                <div id="logo">
+                    <a href="{{ .Site.BaseURL }}">
+                        <img class="u-logo" src="{{ .Site.Params.logo | absURL }}" />
+                    </a>
+                </div>
+                {{ end }}
+                <a id="site__name" href="{{ .Site.BaseURL }}">
+                    {{ .Site.Title }}
+                </a>
+            </div>
+            <div class="flex row">
+                <nav aria-label="page menu" class="flex row">
+                    <ul role="menubar" class="flex row">
+                        {{ range $.Site.Menus.main }}
+                        <li role="none">
+                            <a class="menu__item" href="{{ .URL }}" title="{{ .Title }}">
+                                {{ .Name | lower }}
+                            </a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+</header>

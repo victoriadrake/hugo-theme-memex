@@ -1,0 +1,11 @@
+{{ with .AlternativeOutputFormats }}
+<div class="row altoutputs">
+    <p>follow this page >>
+        {{ range $.AlternativeOutputFormats -}}
+        <a class="" href="{{ .Permalink }}">
+            {{ .Name | lower }}
+        </a>
+        {{ end }}
+    </p>
+</div>
+{{ end -}}
