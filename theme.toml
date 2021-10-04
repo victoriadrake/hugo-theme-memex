@@ -1,0 +1,24 @@
+name = "Memex"
+license = "BSD-2-Clause"
+licenselink = "https://github.com/victoriadrake/hugo-theme-memex/blob/master/LICENSE"
+description = "A personal memex theme."
+
+# The home page of the theme, where the source can be found.
+homepage = "https://github.com/victoriadrake/hugo-theme-memex"
+
+# If you have a running demo of the theme.
+demosite = "https://gohugo.io"
+
+tags = ["personal","indieweb","feed","mobile","light","dark","dark mode","customizable"]
+features = ["indieweb","custom css","rss","json"]
+
+# If the theme has a single author
+[author]
+  name = "Victoria Drake"
+  homepage = "https://victoria.dev/"
+
+# If porting an existing theme
+[original]
+  author = "Victoria Drake"
+  homepage = "https://victoria.dev/"
+  repo = "Link to source code of original theme"

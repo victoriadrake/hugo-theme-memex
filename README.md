@@ -6,12 +6,25 @@ Memex is a theme for [Hugo](https://gohugo.io/), a static site generator that he
 
 ### 1. Add this theme
 
-Add this theme to your Hugo site by running this command from the site's main folder:
+Add this theme to your Hugo site using Hugo Modules. First, initialize a new Hugo Module in the root of your site:
 
 ```sh
 cd <whatever you named your site folder>
-git submodule add https://github.com/victoriadrake/hugo-theme-memex.git
+hugo mod init github.com/<username>/<repository name>
 ```
+
+For example: `hugo mod init github.com/smallweborg/smallweborg.github.io`. Replace `github.com` if your site repository is hosted elsewhere.
+
+Add these lines to your `config.toml`:
+
+```toml
+[module]
+    [[module.imports]]
+        path = "github.com/victoriadrake/hugo-theme-memex"
+        disable = false
+```
+
+You're done! Run `hugo server` to see the magic.
 
 ### 2. Update your `config` file
 
@@ -23,11 +36,9 @@ Edit the `config.toml` file to name and customize your site. Here are all the di
 
 When you're ready, you can deploy automatically with services like:
 
-- [Neocities](https://neocities.org/), either using the [included workflow](https://github.com/victoriadrake/hugo-theme-memex/blob/master/.github/workflows/build.yaml) or drag-and-drop upload.
-- GitHub Actions can deploy to [GitHub Pages](https://pages.github.com/) using the [included workflow](https://github.com/victoriadrake/hugo-theme-memex/blob/master/.github/workflows/build.yaml). Just [configure your publishing source](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) to be your `docs/` directory.
+- GitHub Actions to [GitHub Pages](https://pages.github.com/). Just [configure your publishing source](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+- [Neocities](https://neocities.org/) with or drag-and-drop upload.
 - Other repository hosting services, like [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/) can also serve static sites.
-
-To use the included GitHub Actions workflow, be sure to move the `.github` folder to the root of your site. The path should be: `example/.github/workflows/build.yaml`.
 
 ## IndieWeb Features
 
